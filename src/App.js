@@ -11,6 +11,9 @@ import Notfound from './Pages/Notfound/NOtfound';
 import Banner from './Pages/Home/Banner/Banner';
 import Booking from './Pages/Booking/Booking';
 import Packege from './Pages/Home/Packege/Packege';
+import Login from './Pages/Login/Login/Login';
+import Authprovider from './Context/Authprovider';
+import PrivateRoute from './Pages/Login/PrivateRoute/Privateroute';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -32,26 +35,30 @@ function App() {
         loading ?
           <Spinner animation="grow" />
           :
-          <BrowserRouter>
-            <Header></Header>
-            <Switch>
-              <Route exact path="/">
-                <Home></Home>
-              </Route>
-              <Route path="/home">
-                <Home></Home>
-              </Route>
-             
-              <Route path="/booking/:id">
-                <Booking></Booking>
-              </Route>
-              {/* <Route path="*">
-              <Notfound></Notfound>
-            </Route> */}
-            </Switch>
+          <Authprovider>
+            <BrowserRouter>
+              <Header></Header>
+              <Switch>
+                <Route exact path="/">
+                  <Home></Home>
+                </Route>
+                <Route path="/home">
+                  <Home></Home>
+                </Route>
+                <Route path="/login">
+                  <Login></Login>
+                </Route>
 
-          </BrowserRouter>
+                <PrivateRoute path="/booking/:id">
+                  <Booking></Booking>
+                </PrivateRoute>
+                <Route path="*">
+                  <Notfound></Notfound>
+                </Route>
+              </Switch>
 
+            </BrowserRouter>
+          </Authprovider>
 
       }
     </div>
