@@ -7,6 +7,10 @@ import { Route, Switch } from 'react-router-dom';
 import Header from './Shared/Header/Header';
 import Home from './Pages/Home/Home/Home';
 
+import Notfound from './Pages/Notfound/NOtfound';
+import Banner from './Pages/Home/Banner/Banner';
+import Booking from './Pages/Booking/Booking';
+
 function App() {
   const [loading, setLoading] = useState(false);
 
@@ -36,6 +40,12 @@ function App() {
               <Route path="/home">
                 <Home></Home>
               </Route>
+              <Route path="/booking/:id">
+                <Booking></Booking>
+              </Route>
+              {/* <Route path="*">
+              <Notfound></Notfound>
+            </Route> */}
             </Switch>
 
           </BrowserRouter>
