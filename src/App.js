@@ -10,6 +10,7 @@ import Home from './Pages/Home/Home/Home';
 import Notfound from './Pages/Notfound/NOtfound';
 import Banner from './Pages/Home/Banner/Banner';
 import Booking from './Pages/Booking/Booking';
+import Packege from './Pages/Home/Packege/Packege';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -40,6 +41,7 @@ function App() {
               <Route path="/home">
                 <Home></Home>
               </Route>
+             
               <Route path="/booking/:id">
                 <Booking></Booking>
               </Route>
