@@ -18,6 +18,7 @@ import Footer from './Shared/Footer/Footer';
 import Allbooking from './Pages/Dashboard/Allbooking/allbooking';
 import Mybooking from './Pages/Dashboard/Mybooking/Mybooking';
 import Addnewpackege from './Pages/Dashboard/AddnewPackege/Addnewpackege';
+import Admin from './Pages/Dashboard/Admin/Admin';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -60,6 +61,9 @@ function App() {
                 </Route>
                 <Route path="/addnewPackege">
                   <Addnewpackege></Addnewpackege>
+                </Route>
+                <Route path="/dashboard">
+                  <Admin></Admin>
                 </Route>
 
                 <PrivateRoute path="/booking/:id">
