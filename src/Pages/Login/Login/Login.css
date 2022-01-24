@@ -1,0 +1,20 @@
+.login-container{
+   
+    margin-top: 70px;
+    border: 1px solid gray;
+    padding:50px ;
+    background-color: honeydew;
+}
+
+
+
+#left-img{
+    width: 100%;
+    border-radius: 8px;
+}
+.icon-gogle{
+    color: rgb(1, 82, 187);
+}
+.google-signin{
+    margin-top: 30px;
+}

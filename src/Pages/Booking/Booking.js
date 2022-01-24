@@ -58,11 +58,12 @@ const Booking = () => {
           <h2>Please Confirm Your Booking</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
            
-            <input defaultValue={service.name} {...register("name")} /><br/>
-            <input defaultValue={service.price} {...register("price")} /><br/>
-            <input defaultValue="test" {...register("username")} /><br/>
-            <input defaultValue="test" {...register("email")} /><br/>
+            <input Value={service.name} {...register("name")} /><br/>
+            <input Value={service.price} {...register("price")} /><br/>
+            <input Value="test" {...register("username")} /><br/>
+            <input Value="test" {...register("email")} /><br/>
             <input placeholder="Address" {...register("address")} /><br/>
+            <input value="pending" {...register("status")} /><br/>
             <input placeholder="Number"{...register("phone")} /><br/>
 
             <input className="btn btn-primary" type="submit" />

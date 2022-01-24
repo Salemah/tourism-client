@@ -14,6 +14,8 @@ import Packege from './Pages/Home/Packege/Packege';
 import Login from './Pages/Login/Login/Login';
 import Authprovider from './Context/Authprovider';
 import PrivateRoute from './Pages/Login/PrivateRoute/Privateroute';
+import Footer from './Shared/Footer/Footer';
+import Allbooking from './Pages/Dashboard/Allbooking/allbooking';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -48,6 +50,9 @@ function App() {
                 <Route path="/login">
                   <Login></Login>
                 </Route>
+                <Route path="/allbooking">
+                  <Allbooking></Allbooking>
+                </Route>
 
                 <PrivateRoute path="/booking/:id">
                   <Booking></Booking>
@@ -56,6 +61,7 @@ function App() {
                   <Notfound></Notfound>
                 </Route>
               </Switch>
+              <Footer></Footer>
 
             </BrowserRouter>
           </Authprovider>
