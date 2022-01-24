@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../Hook/UseAuth';
@@ -19,7 +19,15 @@ const Header = () => {
       <Nav.Link href="#pricing">Pricing</Nav.Link>
        {user?.email ?
                             <Button onClick={logOut} variant="light">Logout</Button> :
-                            <Nav.Link as={Link} to="/login">Login</Nav.Link>} 
+                            <Nav.Link as={Link} to="/login">Login</Nav.Link>}
+
+      {user?.email && <NavDropdown title="Dashboard" id="basic-nav-dropdown">
+          <NavDropdown.Item as={HashLink} to="/allbooking">Allbooking</NavDropdown.Item>
+          <NavDropdown.Item as={HashLink} to="/mybooking">Mybooking</NavDropdown.Item>
+          <NavDropdown.Item as={HashLink} to="/addnewPackege">AddnewPackege</NavDropdown.Item>
+          
+          
+        </NavDropdown>} 
       <Navbar.Text>
         Signed in as: {user.displayName}</Navbar.Text>
     </Navbar.Collapse>

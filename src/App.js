@@ -16,6 +16,8 @@ import Authprovider from './Context/Authprovider';
 import PrivateRoute from './Pages/Login/PrivateRoute/Privateroute';
 import Footer from './Shared/Footer/Footer';
 import Allbooking from './Pages/Dashboard/Allbooking/allbooking';
+import Mybooking from './Pages/Dashboard/Mybooking/Mybooking';
+import Addnewpackege from './Pages/Dashboard/AddnewPackege/Addnewpackege';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -52,6 +54,12 @@ function App() {
                 </Route>
                 <Route path="/allbooking">
                   <Allbooking></Allbooking>
+                </Route>
+                <Route path="/mybooking">
+                  <Mybooking></Mybooking>
+                </Route>
+                <Route path="/addnewPackege">
+                  <Addnewpackege></Addnewpackege>
                 </Route>
 
                 <PrivateRoute path="/booking/:id">
