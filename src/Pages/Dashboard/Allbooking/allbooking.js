@@ -6,7 +6,7 @@ const Allbooking = () => {
         fetch('http://localhost:5000/booking')
             .then(res => res.json())
             .then(data => setBooking(data))
-    }, [])
+    }, []);
     return (
         <div className='allbooking-container'>
             <table class="table table-striped">

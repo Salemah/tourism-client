@@ -2,12 +2,14 @@ import React, { useEffect, useState, useRef } from "react";
 import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
+import useAuth from "../../Hook/UseAuth";
 import './Booking.css';
 
 const Booking = () => {
   const { id } = useParams();
+  const {user}  = useAuth();
   const [service, setService] = useState({});
-  const [booking, setBooking] = useState({});
+ 
   const { register, handleSubmit,reset, watch, formState: { errors } } = useForm();
 
 
@@ -58,10 +60,10 @@ const Booking = () => {
           <h2>Please Confirm Your Booking</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
            
-            <input Value={service.name} {...register("name")} /><br/>
-            <input Value={service.price} {...register("price")} /><br/>
-            <input Value="test" {...register("username")} /><br/>
-            <input Value="test" {...register("email")} /><br/>
+            <input Value={service?.name} {...register("name")} /><br/>
+            <input Value={service?.price} {...register("price")} /><br/>
+            <input Value={user?.displayName} {...register("username")} /><br/>
+            <input Value={user?.email} {...register("email")} /><br/>
             <input placeholder="Address" {...register("address")} /><br/>
             <input value="pending" {...register("status")} /><br/>
             <input placeholder="Number"{...register("phone")} /><br/>
