@@ -19,6 +19,7 @@ import Allbooking from './Pages/Dashboard/Allbooking/allbooking';
 import Mybooking from './Pages/Dashboard/Mybooking/Mybooking';
 import Addnewpackege from './Pages/Dashboard/AddnewPackege/Addnewpackege';
 import Admin from './Pages/Dashboard/Admin/Admin';
+import Dashboard from './Pages/Dashboard/Admin/dashboard';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -62,8 +63,9 @@ function App() {
                 <Route path="/addnewPackege">
                   <Addnewpackege></Addnewpackege>
                 </Route>
+              
                 <Route path="/dashboard">
-                  <Admin></Admin>
+                 <Dashboard/>
                 </Route>
 
                 <PrivateRoute path="/booking/:id">

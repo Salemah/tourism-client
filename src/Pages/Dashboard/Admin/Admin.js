@@ -2,17 +2,10 @@ import React, { useState } from "react";
 import Addnewpackege from "../AddnewPackege/Addnewpackege";
 import Allbooking from "../Allbooking/allbooking";
 import Mybooking from "../Mybooking/Mybooking";
-
-
-
-
-
-// import AddEvents from "./../../AddEvents/AddEvents";
-
 const Admin = () => {
-  const [control, setControl] = useState("Allbooking");
+  const [state, setState] = useState("Allbooking");
 
-  console.log(control);
+  
   return (
     <div className="admin-container">
       <div className="dashboard">
@@ -24,19 +17,19 @@ const Admin = () => {
                 
                 <div className="all-menu mt-5">
                   <li
-                    onClick={() => setControl("Addnewpackege")}
+                    onClick={() => setState("Addnewpackege")}
                     className="admin-menu p-2"
                   >
                     Addnewpackege
                   </li>
                   <li
-                    onClick={() => setControl("Allbooking")}
+                    onClick={() => setState("Allbooking")}
                     className="admin-menu p-2"
                   >
                     Allbooking
                   </li>
                   <li
-                    onClick={() => setControl("Mybooking")}
+                    onClick={() => setState("Mybooking")}
                     className="admin-menu p-2"
                   >
                     Mybooking
@@ -45,9 +38,9 @@ const Admin = () => {
               </div>
             </div>
             <div className="col-md-9 text-center  text-center">
-              {control === "Allbooking" && <Allbooking></Allbooking>}
-              {control === "Mybooking" && <Mybooking></Mybooking>}
-              {control === "Addnewpackege" && <Addnewpackege></Addnewpackege>}
+              {state === "Allbooking" && <Allbooking></Allbooking>}
+              {state === "Mybooking" && <Mybooking></Mybooking>}
+              {state === "Addnewpackege" && <Addnewpackege></Addnewpackege>}
             </div>
           </div>
         </div>
