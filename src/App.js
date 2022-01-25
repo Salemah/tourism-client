@@ -18,8 +18,9 @@ import Footer from './Shared/Footer/Footer';
 import Allbooking from './Pages/Dashboard/Allbooking/allbooking';
 import Mybooking from './Pages/Dashboard/Mybooking/Mybooking';
 import Addnewpackege from './Pages/Dashboard/AddnewPackege/Addnewpackege';
-import Admin from './Pages/Dashboard/Admin/Admin';
+
 import Dashboard from './Pages/Dashboard/Admin/dashboard';
+import Resort from './Pages/Home/Resort/Resort';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -66,6 +67,9 @@ function App() {
               
                 <Route path="/dashboard">
                  <Dashboard/>
+                </Route>
+                <Route path="/resort">
+                 <Resort/>
                 </Route>
 
                 <PrivateRoute path="/booking/:id">

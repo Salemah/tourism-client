@@ -1,0 +1,23 @@
+.carosolell{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 60px;
+    margin-bottom: 70px;
+   
+
+}
+
+
+.single-slide{
+    height: 400px;
+   
+}
+.slide-image{
+    width: 40%;
+    height: 200px;
+    border-radius: 100px;
+}
+.gg{
+    height: 100px;
+}
