@@ -9,7 +9,7 @@ const Allbooking = () => {
     }, []);
     const deleteBooking = id =>{
        
-            fetch(`http://localhost:5000/booking/${id}`,{method:"DELETE"}
+            fetch(`https://sleepy-plains-48362.herokuapp.com/booking/${id}`,{method:"DELETE"}
             )
             .then(res => res.json())
                .then(result=> 

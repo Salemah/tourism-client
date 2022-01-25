@@ -8,7 +8,7 @@ const Addresort = () => {
 
     const onSubmit = (data) => {
         data.email = user?.email;
-        fetch("http://localhost:5000/addresort", {
+        fetch("https://sleepy-plains-48362.herokuapp.com/addresort", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

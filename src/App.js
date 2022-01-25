@@ -8,9 +8,9 @@ import Header from './Shared/Header/Header';
 import Home from './Pages/Home/Home/Home';
 
 import Notfound from './Pages/Notfound/NOtfound';
-import Banner from './Pages/Home/Banner/Banner';
+
 import Booking from './Pages/Booking/Booking';
-import Packege from './Pages/Home/Packege/Packege';
+
 import Login from './Pages/Login/Login/Login';
 import Authprovider from './Context/Authprovider';
 import PrivateRoute from './Pages/Login/PrivateRoute/Privateroute';
@@ -21,7 +21,8 @@ import Addnewpackege from './Pages/Dashboard/AddnewPackege/Addnewpackege';
 
 import Dashboard from './Pages/Dashboard/Admin/dashboard';
 import Resort from './Pages/Home/Resort/Resort';
-import Addresort from './Pages/Dashboard/AddResort/addresort';
+
+import Resortbooking from './Pages/Booking/Resortbooking/Resortbooking';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -65,8 +66,8 @@ function App() {
                 <Route path="/addnewPackege">
                   <Addnewpackege></Addnewpackege>
                 </Route>
-                <Route path="/addResort">
-                  <Addresort></Addresort>
+                <Route path="/resortbooking/:id">
+                  <Resortbooking></Resortbooking>
                 </Route>
               
                 <Route path="/dashboard">
