@@ -7,6 +7,24 @@ const Allbooking = () => {
             .then(res => res.json())
             .then(data => setBooking(data))
     }, []);
+    const deleteBooking = id =>{
+       
+            fetch(`http://localhost:5000/booking/${id}`,{method:"DELETE"}
+            )
+            .then(res => res.json())
+               .then(result=> 
+                {
+                    if(result.deletedCount>0){
+                        alert("Booking Deeleted succesfully");
+                        const newSBooking = booking.filter(booking=>booking._id != id);
+                        setBooking(newSBooking);
+
+
+                }})
+      
+
+    };
+   
     return (
         <div className='allbooking-container'>
             <table class="table table-striped">
@@ -18,6 +36,8 @@ const Allbooking = () => {
                         <th scope="col">Price</th>
                         <th scope="col">Phone</th>
                         <th scope="col">Status</th>
+                        <th scope="col">APPROVAL</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,10 +50,12 @@ const Allbooking = () => {
                             <td>{book.price}</td>
                             <td>{book.phone}</td>
                             <td>{book.status}</td>
+                            <td><button className="btn btn-warning"  >Approve</button></td>
+                            <td><button className="btn btn-danger"onClick={()=>deleteBooking(book._id)} >Delete</button></td>
 
                         </tr>)
                     }
-                    {/* <th scope="row">1</th> */}
+                   
 
 
 

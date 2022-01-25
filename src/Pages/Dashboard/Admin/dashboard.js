@@ -14,7 +14,7 @@ const Dashboard = () => {
   <Row className='left-columm'>
     <Col sm={2} className='columm' >
         <div class=" left-button ">
-            <button className='btn btn-danger' onClick={() => setState("Addnewpackege")}>Addnewpackege</button>
+            <button className='btn btn-danger' onClick={() => setState("Addnewpackege")}>Addpackege</button>
             <button className='btn btn-danger' onClick={() => setState("Allbooking")}>Allbooking</button>
             <button className='btn btn-danger' onClick={() => setState("Mybooking")}>Mybooking</button>
             
