@@ -13,8 +13,9 @@ const Mybooking = () => {
             .then(data => setBooking(data))
     }, []);
     const deleteBooking = id =>{
-       
-        fetch(`https://sleepy-plains-48362.herokuapp.com/booking/${id}`,{method:"DELETE"}
+        const proceed = window.confirm('Are You sure to delete?')
+        if(proceed){
+            fetch(`https://sleepy-plains-48362.herokuapp.com/booking/${id}`,{method:"DELETE"}
         )
         .then(res => res.json())
            .then(result=> 
@@ -26,6 +27,8 @@ const Mybooking = () => {
 
 
             }})
+        }
+        
   
 
 };
