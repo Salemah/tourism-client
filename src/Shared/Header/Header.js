@@ -26,8 +26,9 @@ const Header = () => {
           <NavDropdown.Item as={HashLink} to="/dashboard">Admin</NavDropdown.Item>
           </NavDropdown>
           } 
+          {user?.email &&
       <Navbar.Text>
-        User: {user.displayName}</Navbar.Text>
+        User: {user.displayName}</Navbar.Text>}
     </Navbar.Collapse>
     </Container>
   </Navbar>
