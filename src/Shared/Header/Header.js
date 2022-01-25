@@ -27,7 +27,7 @@ const Header = () => {
           </NavDropdown>
           } 
       <Navbar.Text>
-        Signed in as: {user.displayName}</Navbar.Text>
+        User: {user.displayName}</Navbar.Text>
     </Navbar.Collapse>
     </Container>
   </Navbar>

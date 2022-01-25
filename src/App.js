@@ -69,6 +69,7 @@ function App() {
                 <Route path="/resortbooking/:id">
                   <Resortbooking></Resortbooking>
                 </Route>
+               
               
                 <Route path="/dashboard">
                  <Dashboard/>

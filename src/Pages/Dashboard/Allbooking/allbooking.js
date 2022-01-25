@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './allbooking.css';
 const Allbooking = () => {
     const [booking, setBooking] = useState([]);
@@ -7,24 +8,34 @@ const Allbooking = () => {
             .then(res => res.json())
             .then(data => setBooking(data))
     }, []);
-    const deleteBooking = id =>{
-       
-            fetch(`https://sleepy-plains-48362.herokuapp.com/booking/${id}`,{method:"DELETE"}
-            )
+    const deleteBooking = id => {
+
+        fetch(`https://sleepy-plains-48362.herokuapp.com/booking/${id}`, { method: "DELETE" }
+        )
             .then(res => res.json())
-               .then(result=> 
-                {
-                    if(result.deletedCount>0){
-                        alert("Booking Deeleted succesfully");
-                        const newSBooking = booking.filter(booking=>booking._id != id);
-                        setBooking(newSBooking);
-
-
-                }})
-      
+            .then(result => {
+                if (result.deletedCount > 0) {
+                    alert("Booking Deeleted succesfully");
+                    const newSBooking = booking.filter(booking => booking._id != id);
+                    setBooking(newSBooking);
+                }
+            })
+    };
+    const handleapprove = id => {
+        const updatedBooking = booking;
+        updatedBooking.status = 'approved';
+        fetch(`https://sleepy-plains-48362.herokuapp.com/booking/${id}`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedBooking)
+        }).then(
+            alert("Approved.")
+        )
 
     };
-   
+
     return (
         <div className='allbooking-container'>
             <table class="table table-striped">
@@ -50,12 +61,15 @@ const Allbooking = () => {
                             <td>{book.price}</td>
                             <td>{book.phone}</td>
                             <td>{book.status}</td>
-                            <td><button className="btn btn-warning"  >Approve</button></td>
-                            <td><button className="btn btn-danger"onClick={()=>deleteBooking(book._id)} >Delete</button></td>
+                            
+                            <td>
+                                    <button className='btn btn-primary booking' >Approve</button>
+                                </td>
+                            <td><button className="btn btn-danger" onClick={() => deleteBooking(book._id)} >Cancel</button></td>
 
                         </tr>)
                     }
-                   
+
 
 
 
