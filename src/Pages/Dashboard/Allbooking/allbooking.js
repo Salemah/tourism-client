@@ -3,7 +3,7 @@ import './allbooking.css';
 const Allbooking = () => {
     const [booking, setBooking] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/booking')
+        fetch('https://sleepy-plains-48362.herokuapp.com/booking')
             .then(res => res.json())
             .then(data => setBooking(data))
     }, []);

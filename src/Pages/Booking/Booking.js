@@ -16,14 +16,14 @@ const Booking = () => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/packege/${id}`)
+    fetch(`https://sleepy-plains-48362.herokuapp.com/packege/${id}`)
       .then(res => res.json())
       .then(data => setService(data))
   }, []);
   const onSubmit = data => 
 {
   
-  fetch(`http://localhost:5000/booking`, {
+  fetch(`https://sleepy-plains-48362.herokuapp.com/booking`, {
      method: "POST",
       headers: {
         "content-type": "application/json",

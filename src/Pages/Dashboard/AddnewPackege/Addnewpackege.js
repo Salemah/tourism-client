@@ -17,7 +17,7 @@ const Addnewpackege = () => {
 
     const onSubmit = (data) => {
         data.email = user?.email;
-        fetch("http://localhost:5000/addpackege", {
+        fetch("https://sleepy-plains-48362.herokuapp.com/addpackege", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

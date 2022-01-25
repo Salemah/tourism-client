@@ -8,7 +8,7 @@ const Mybooking = () => {
     const {user} = useAuth();
    
     useEffect(() => {
-        fetch(`http://localhost:5000/mybooking/${user.email}`)
+        fetch(`https://sleepy-plains-48362.herokuapp.com/mybooking/${user.email}`)
             .then(res => res.json())
             .then(data => console.log(data))
     }, [user.email])

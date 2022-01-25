@@ -6,7 +6,7 @@ const Packege = () => {
     const [packege, setPackege] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/packege')
+        fetch('https://sleepy-plains-48362.herokuapp.com/packege')
             .then(res => res.json())
             .then(data => {
                 setPackege(data);
