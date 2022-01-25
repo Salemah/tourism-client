@@ -1,39 +1,31 @@
-import React from "react";
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import useAuth from '../../../Hook/UseAuth';
 
-import { useForm } from "react-hook-form";
-import useAuth from "../../../Hook/UseAuth";
-import './addnewpackege.css';
-
-
-const Addnewpackege = () => {
+const Addresort = () => {
     const { user } = useAuth();
-    const {
-        register,
-        handleSubmit,
-        reset,
-        watch,
-        formState: { errors },
-    } = useForm();
+    const {register,handleSubmit,reset,watch,formState: { errors },} = useForm();
 
     const onSubmit = (data) => {
         data.email = user?.email;
-        fetch("https://sleepy-plains-48362.herokuapp.com/addpackege", {
+        fetch("http://localhost:5000/addresort", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
         })
             .then((res) => res.json())
-            .then(packege => {
-                if(packege.insertedId){
-                    alert("Packege added succfull");
+            .then(Resort => {
+                if(Resort.insertedId){
+                    alert("Resort added successfull");
                     reset();
                 }
             });
         
     };
+
     return (
         <div className="add">
-            <h1 className="mt-5 text-center text-info">Please Add Packege</h1>
+            <h1 className="mt-5 text-center text-info">Please Add Resosrt</h1>
             
                     <div className="addpackege-form">
                         <form onSubmit={handleSubmit(onSubmit)}>
@@ -81,8 +73,7 @@ const Addnewpackege = () => {
                         </form>
                     </div>
                 </div>
-           
     );
 };
 
-export default Addnewpackege;
+export default Addresort;

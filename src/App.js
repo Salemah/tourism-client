@@ -21,6 +21,7 @@ import Addnewpackege from './Pages/Dashboard/AddnewPackege/Addnewpackege';
 
 import Dashboard from './Pages/Dashboard/Admin/dashboard';
 import Resort from './Pages/Home/Resort/Resort';
+import Addresort from './Pages/Dashboard/AddResort/addresort';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -63,6 +64,9 @@ function App() {
                 </Route>
                 <Route path="/addnewPackege">
                   <Addnewpackege></Addnewpackege>
+                </Route>
+                <Route path="/addResort">
+                  <Addresort></Addresort>
                 </Route>
               
                 <Route path="/dashboard">
