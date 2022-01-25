@@ -12,9 +12,26 @@ const Mybooking = () => {
             .then(res => res.json())
             .then(data => setBooking(data))
     }, []);
+    const deleteBooking = id =>{
+       
+        fetch(`https://sleepy-plains-48362.herokuapp.com/booking/${id}`,{method:"DELETE"}
+        )
+        .then(res => res.json())
+           .then(result=> 
+            {
+                if(result.deletedCount>0){
+                    alert("Booking Deeleted succesfully");
+                    const newSBooking = booking.filter(booking=>booking._id != id);
+                    setBooking(newSBooking);
+
+
+            }})
+  
+
+};
     return (
         <div className='bb'>
-           <table class="table table-striped mybooking">
+           <table class="table table-striped mybooking"  >
                 <thead>
                     <tr >
                         <th scope="col">Name</th>
@@ -23,6 +40,7 @@ const Mybooking = () => {
                         <th scope="col">Price</th>
                         <th scope="col">Phone</th>
                         <th scope="col">Status</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,6 +53,7 @@ const Mybooking = () => {
                             <td>{book.price}</td>
                             <td>{book.phone}</td>
                             <td>{book.status}</td>
+                            <td><button className="btn btn-danger"onClick={()=>deleteBooking(book._id)} >Delete</button></td>
 
                         </tr>)
                     }

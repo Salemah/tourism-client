@@ -13,7 +13,7 @@ const Dashboard = () => {
         <div className='dashboard'>
             <Container>
   <Row className='left-columm'>
-    <Col sm={2} className='columm' >
+    <Col sm={4} lg={2} className='columm' >
         <div class=" left-button ">
             <button className='btn btn-danger' onClick={() => setState("Addnewpackege")}>Addpackege</button>
             <button className='btn btn-danger' onClick={() => setState("Allbooking")}>Allbooking</button>
@@ -24,7 +24,7 @@ const Dashboard = () => {
     
 
     </Col>
-    <Col sm={10} className="right-columm">
+    <Col sm={8} lg={10} className="right-columm">
         <div >
               {state === "Allbooking" && <Allbooking></Allbooking>}
               {state === "Mybooking" && <Mybooking></Mybooking>}
